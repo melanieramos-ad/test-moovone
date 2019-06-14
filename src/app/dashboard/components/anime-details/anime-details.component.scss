@@ -1,0 +1,21 @@
+:host {
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  .prev,
+  .next {
+    cursor: pointer;
+  }
+
+  .prev {
+    flex: 1 0 auto;
+    text-align: left;
+  }
+
+  .next {
+    flex: 1 0 auto;
+    text-align: right;
+  }
+}

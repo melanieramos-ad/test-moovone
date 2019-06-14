@@ -1,0 +1,10 @@
+@import 'theme';
+
+.name {
+  color: mat-color($searchr-app-primary);
+  text-decoration: none;
+}
+
+.content {
+	text-align: justify;
+}

@@ -1,0 +1,11 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+// Define the default theme (same as the example above).
+$searchr-app-primary: mat-palette($mat-indigo);
+$searchr-app-accent:  mat-palette($mat-blue-gray, A200, A100, A400);
+$searchr-app-theme:   mat-light-theme($searchr-app-primary, $searchr-app-accent);
+
+// Include the default theme styles.
+@include angular-material-theme($searchr-app-theme);

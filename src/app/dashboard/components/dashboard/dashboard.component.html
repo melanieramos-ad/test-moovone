@@ -1,0 +1,40 @@
+<mat-card class="user-details">
+  <mat-card-content>
+    <app-user [user]="user"
+      *ngIf="user"></app-user>
+  </mat-card-content>
+</mat-card>
+
+<div class="animes">
+  <div class="currentPage">Page: {{currentPage}}</div>
+  <mat-toolbar class="anime-controls">
+    <button mat-raised-button color="secondary"
+      *ngIf="currentPage > 1"    (click)="prevPage()">Prev</button>
+
+
+    <div class="middle" *ngIf="animes">
+      
+      <div class="sort">
+        <mat-form-field>
+          <mat-select placeholder="Order page by" (valueChange)="sortList($event)">
+            <mat-option value="title">Name</mat-option>
+            <mat-option value="score">Score</mat-option>
+            <mat-option value="start_date">Start Date</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <button mat-raised-button color="primary" 
+      *ngIf="maxPage && currentPage < maxPage"
+      (click)="nextPage()">Next</button>
+
+  </mat-toolbar>
+  
+
+  <div class="anime-list"
+    *ngIf="animes && !loading">
+    <app-anime *ngFor="let anime of animes; trackBy: trackById"
+      [anime]="anime" (viewDetails)="showDetails($event)"></app-anime>
+  </div>
+</div>

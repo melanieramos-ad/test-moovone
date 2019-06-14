@@ -1,0 +1,22 @@
+@import 'theme';
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  min-height: calc(100vh - 64px); // find a way to maybe replace this with $mat-toolbar-height-desktop
+}
+
+h1 {
+  color: mat-color($searchr-app-primary);
+}
+
+img {
+  border-radius: 5px;
+}
+
+button {
+  margin-top: 20px;
+}

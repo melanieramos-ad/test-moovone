@@ -1,0 +1,9 @@
+<div class="title">{{anime.title}}</div>
+<img [src]="pictures[currentPicture].large" *ngIf="pictures.length"/>
+<div class="controls" *ngIf="pictures.length">
+  <span *ngIf="currentPicture > 0" class="prev" (click)="prevPicture()">Prev</span>
+  <span *ngIf="currentPicture < pictures.length - 1" class="next" (click)="nextPicture()">Next</span>
+</div>
+<div class="score">
+  Score: {{anime.score}}
+</div>
